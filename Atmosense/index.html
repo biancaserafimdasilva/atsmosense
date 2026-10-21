@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>Atmosense</title>
 </head>
 <body>
@@ -14,7 +15,7 @@
         <p class="subtitulo2">Brasil</p>
     </div>
     <div class="PagInteira">
-        <div class="CantoEsquerdo">
+        <section id="canto-esquerdo">
             <div class="card1">
                 <div class="topocard1">
                 <h2>Umidade</h2> 
@@ -24,18 +25,18 @@
                     <span class="UmidadeVal">13</span>
                     <span class="UmidadeVal2">%</span> 
                 </div>   
-                <p class="descriçãoUmidade">Ponto de condensação normal</p>
+                <p class="descricaoUmidade">Ponto de condensação normal</p>
             </div> 
             <div class="card2">
                 <div class="topocard2">
                 <h2>Pressão Atmosférica</h2> 
                 <i class="fa-solid fa-gauge"></i>
                 </div>
-                <div class="valorPressãoAtmosferica">
-                    <span class="PressãoAtmosfericaVal">5005</span>
-                    <span class="UnidadePressão">hPa</span> 
+                <div class="valorPressaoAtmosferica">
+                    <span class="PressaoAtmosfericaVal">5005</span>
+                    <span class="UnidadePressao">hPa</span> 
                 </div>   
-                <p class="descriçãoPressão">Estável</p>
+                <p class="descricaoPressao">Estável</p>
             </div> 
             <div class="card3">
                 <div class="topocard3">
@@ -46,20 +47,20 @@
                     <span class="QualidadeArVal">13</span>
                     <span class="UnidadeQualidadeAr">%</span> 
                 </div>   
-                <p class="descriçãoQualidadeAr">Ar em baixa qualidade</p>
+                <p class="descricaoQualidadeAr">Ar em baixa qualidade</p>
             </div> 
             <div class="card4">
                 <div class="topocard4">
                 <h2>Presença de Gases</h2> 
                 <i class="fa-solid fa-flask"></i>
                 </div>
-                <div class="valorPresençaGases">
-                    <span class="PresençaGasesVal">Gases detectados</span>
+                <div class="valorPresencaGases">
+                    <span class="PresencaGasesVal">Gases detectados</span>
                 </div> 
-                <p class="descriçãoPresençaGases">Alerta de gases</p>  
+                <p class="descricaoPresencaGases">Alerta de gases</p>  
             </div> 
-        </div>
-        <div class="Centro">
+        </section>
+        <section id="centro">
             <div class="card5">
                 <div class="topocard5">
                     <h2>TEMPERATURA</h2> 
@@ -70,14 +71,16 @@
                     <i class="fa-solid fa-temperature-three-quarters"></i>
                 </div>   
                 <div class="rodapeTemperatura">
-                    <span class="SensaçãoTemperatura">11°C</span>
-                    <span class="descriçãoTemperatura">Sensação térmica</span>
+                    <span class="SensacaoTemperatura">11°C</span>
+                    <span class="descricaoTemperatura">Sensação térmica</span>
                 </div>
             </div>
-        </div>
+        </section>
         <section id="cantodireito">
-            <div id="cardprevisao">
+            <div class="cardprevisao">
+                <div class="topocard6">
                     <h2>PREVISÃO 7 DIAS</h2>
+                </div>
                 <div class="dia">
                     <span class="diadasemana">Seg</span>
                     <span class="icone">☀</span>
@@ -86,48 +89,47 @@
                     <span class="tempmin">19°</span>
                 </div>
                 <div class="dia">
-                    <span class="dia">Ter</span>
+                    <span class="diadasemana">Ter</span>
                     <span class="icone">⛅</span>
                     <span class="clima">Parcialmente Nublado</span>
-                    <span class="tempmax">28</span>
-                    <span class="tempmin">20</span>
+                    <span class="tempmax">28°</span>
+                    <span class="tempmin">20°</span>
                 </div>
                 <div class="dia">
-                    <span class="dia">Qua</span>
+                    <span class="diadasemana">Qua</span>
                     <span class="icone">☁</span>
                     <span class="clima">Nublado</span>
-                    <span class="tempmax">26</span>
-                    <span class="tempmin">18</span>
+                    <span class="tempmax">26°</span>
+                    <span class="tempmin">18°</span>
                 </div>
                 <div class="dia">
-                    <span class="dia">Qui</span>
+                    <span class="diadasemana">Qui</span>
                     <span class="icone">🌧</span>
                     <span class="clima">Chuva Média </span>
-                    <span class="tempmax">24</span>
-                    <span class="tempmin">17</span>
+                    <span class="tempmax">24°</span>
+                    <span class="tempmin">17°</span>
                 </div>
                 <div class="dia">
-                    <span class="dia">Sex</span>
+                    <span class="diadasemana">Sex</span>
                     <span class="icone">⛈</span>
                     <span class="clima">Tempestades</span>
-                    <span class="tempmax">23</span>
-                    <span class="tempmin">16</span>
+                    <span class="tempmax">23°</span>
+                    <span class="tempmin">16°</span>
                 </div>
                 <div class="dia">
-                    <span class="dia">Sex</span>
+                    <span class="diadasemana">Sab</span>
                     <span class="icone">⛅</span>
                     <span class="clima">Parcialmente Nublado</span>
-                    <span class="tempmax">26</span>
-                    <span class="tempmin">18</span>
+                    <span class="tempmax">26°</span>
+                    <span class="tempmin">18°</span>
                 </div>
                 <div class="dia">
-                    <span class="dia">Sáb</span>
+                    <span class="diadasemana">Dom</span>
                     <span class="icone">☀</span>
                     <span class="clima">Ensolarado</span>
-                    <span class="tempmax">28</span>
-                    <span class="tempmin">19</span>
+                    <span class="tempmax">28°</span>
+                    <span class="tempmin">19°</span>
                 </div>
-            </div>
             </div>
         </section>
     </div>

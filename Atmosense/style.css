@@ -1,5 +1,8 @@
+/* estilo corpo */
 body {
-    background-color:#0B0F19
+    background-color:#0B0F19;
+    width: 100%;
+    margin: 500;
 }
 h1 {
     color:rgb(255, 255, 255);
@@ -7,21 +10,26 @@ h1 {
     font-family:Geist, sans-serif;
     margin-bottom: 0.5%;
 }
-
-div.PagInteira{
-    display:flex;
-    gap: 15px;
-    flex-direction: row;
-    align-items: flex-start;
+h2{
+    color: #94A3B8;
+    font-size:81%;
 }
-div.Subtitulo{
+.PagInteira{
+    display:grid;
+    grid-template-columns: 31% 40% 27%;
+    gap: 1%;
+    flex-direction: row;
+    align-items: start;
+
+}
+.Subtitulo{
     display: flex;
     font-size: 75%;
     font-family: 'IBM Plex Sans', sans-serif;
     gap: 0.65%;
     align-items: center;
 }
-span.bolinha{
+.bolinha{
     display: inline-block;
     width: 8px;
     height: 8px;
@@ -29,112 +37,147 @@ span.bolinha{
     border-radius: 50%;
     box-shadow: 0 0 10px #06B6D4;
 }
-p.subtitulo1 {
+.subtitulo1 {
     color: #06B6D4;
 }
-p.subtitulo2{
+.subtitulo2{
     color:rgb(85, 85, 85);
 }
-div.CantoEsquerdo{
-    width: 30%;
-    gap: 15px;
+
+/* estilo colunas */
+
+#CantoEsquerdo{
+    width: 100%;
+    min-width: 0;
     display: flex;
     flex-direction: column;
+    gap: 3%;
 }
-div.Centro{
-    width: 40%;
-    gap: 15px;
+#Centro{
+    width: 100%;
+    min-width: 0;
     display: flex;
     flex-direction: column;
+    gap: 3%;
 }
-div.card1{
+#cantodireito {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+}
+/* estilo card umidade */
+
+.card1,
+.card2,
+.card3,
+.card4,
+.card5{
     display: flex;
     flex-direction: column;
     background-color:#131B2E;
     border-radius: 12px;
-    padding: 16px;
+    padding: 5%;
     font-family:Geist, sans-serif;
+    margin-bottom: 3%;
+
 }
-div.topocard1{
+.topocard1,
+.topocard2,
+.topocard3,
+.topocard4,
+.topocard5,
+.topocard6{
     display:flex;
     justify-content: space-between;
     align-items: center;
 }
-h2{
-    color: #94A3B8;
-    font-size:81%;;
-}
+
 i.fa-solid.fa-droplet{
+    color: #06B6D4;
+    font-size: 110%;
+}
+i.fa-solid.fa-gauge{
+    color: #94A3B8;
+    font-size: 18px;
+}
+i.fa-solid.fa-lungs{
     color: #06B6D4;
     font-size: 18px;
 }
-div.valorUmidade{
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-span.UmidadeVal{
-    color: rgb(255, 255, 255);
-    font-size: 150%;
-    font-weight: bold;
-}
-span.UmidadeVal2{
-    display: flex;
-    align-items: center;
-    font-size: 81%;
+i.fa-solid.fa-flask{
     color: #94A3B8;
+    font-size: 18px;
 }
-p.descriçãoUmidade{
-    color: #06B6D4;
-    font-size: 81%;
-    margin: 0;
-}
-div.card5{
-    display: flex;
-    flex-direction: column;
-    background-color:#131B2E;
-    border-radius: 12px;
-    padding: 16px;
-    width: 100%;
-    height: 297px;
-    font-family:Geist, sans-serif;
-}
-div.topocard5{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    font-weight: 500;
-}
-
-div.valorTemperatura{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    flex: 1;
-    gap: 10px;
-}
-span.TemperaturaVal{
-    color: rgb(255, 255, 255);
-    font-size: 450%;
-    font-weight: bold;
-}
-
-span.UnidadeTemperatura{
-    display: flex;
-    font-size: 175%;
-    color: #06B6D4;
-    font-weight: 600;
-}
-
 i.fa-solid.fa-temperature-three-quarters{
     color: #06B6D4;
     font-size: 60px;
     padding: 20px;
 }
 
-div.rodapeTemperatura{
+.valorUmidade,
+.valorPressaoAtmosferica,
+.valorPresencaGases,
+.valorQualidadeAr,
+.valorTemperatura{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.UmidadeVal,
+.PressaoAtmosfericaVal,
+.QualidadeArVal,
+.PresencaGasesVal{
+    color: rgb(255, 255, 255);
+    font-size: 150%;
+    font-weight: bold;
+}
+.UmidadeVal2,
+.UnidadePressao,
+.UnidadeQualidadeAr{
+    display: flex;
+    align-items: center;
+    font-size: 81%;
+    color: #94A3B8;
+}
+.descricaoUmidade,
+.descricaoPressao,
+.descricaoQualidadeAr{
+    color: #06B6D4;
+    font-size: 81%;
+    margin: 0;
+}
+.descricaoPresencaGases{
+    color: #94A3B8;
+    font-size: 81%;
+    margin: 0;
+}
+
+.card5{
+    display: flex;
+    flex-direction: column;
+    background-color:#131B2E;
+    border-radius: 12px;
+    padding: 16px;
+    height: 297px;
+    font-family:Geist, sans-serif;
+}
+
+.TemperaturaVal{
+    color: rgb(255, 255, 255);
+    font-size: 450%;
+    font-weight: bold;
+}
+
+.UnidadeTemperatura{
+    display: flex;
+    font-size: 175%;
+    color: #06B6D4;
+    font-weight: 600;
+}
+
+.rodapeTemperatura{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -143,125 +186,53 @@ div.rodapeTemperatura{
     margin-top: 12px;
 }
 
-span.SensaçãoTemperatura{
+.SensacaoTemperatura{
     color: #ffffff;
     font-size: 150%;
     font-weight: 600;
 }
 
-span.descriçãoTemperatura{
+.descricaoTemperatura{
     color: #94A3B8;
     font-size: 87%;
 }
-div.card3{
-    display: flex;
-    flex-direction: column;
-    background-color:#131B2E;
-    border-radius: 12px;
-    padding: 16px;
-    font-family:Geist, sans-serif;
-    
-}
-div.topocard3{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-i.fa-solid.fa-lungs{
-    color: #06B6D4;
-    font-size: 18px;
-}
-div.valorQualidadeAr{
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-span.QualidadeArVal{
-    color: rgb(255, 255, 255);
-    font-size: 150%;
-    font-weight: bold;
-}
-span.UnidadeQualidadeAr{
-    display: flex;
-    align-items: center;
-    font-size: 81%;
-    color: #94A3B8;
-}
-p.descriçãoQualidadeAr{
-    color: #06B6D4;
-    font-size: 81%;
-    margin: 0;
-}
-div.card2{
-    display: flex;
-    flex-direction: column;
-    background-color:#131B2E;
+/* estilo card previsão */
+.cardprevisao {
+    background-color: #131B2E;
     border-radius: 12px;
     padding: 16px;
-    font-family:Geist, sans-serif;
-    
+    font-family: Geist, sans-serif;
+    color: #ffffff;
+    min-width: 0;
 }
-div.topocard2{
-    display:flex;
-    justify-content: space-between;
+.dia {
+    display: grid;
+    grid-template-columns: 38px 24px 1fr auto auto;
     align-items: center;
+    gap: 2%;
+    padding: 5% 2%;
+    border-radius: 3%;
 }
-i.fa-solid.fa-gauge{
-    color: #94A3B8;
-    font-size: 18px;
+.diadasemana {
+    font-weight: 600;
+    font-size: 13px;
+    color: #fff;
 }
-div.valorPressãoAtmosferica{
-    display: flex;
-    align-items: center;
-    gap: 4px;
+.clima{
+    font-size: 11px; 
+    color: #94A3B8; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
 }
-span.PressãoAtmosfericaVal{
-    color: rgb(255, 255, 255);
-    font-size: 150%;
-    font-weight: bold;
+.tempmax {
+    font-weight: 700; 
+    font-size: 13px; 
+    color: #fff;
 }
-span.UnidadePressão{
-    display: flex;
-    align-items: center;
-    font-size: 81%;
-    color: #94A3B8;
-}
-p.descriçãoPressão{
-    color: #94A3B8;
-    font-size: 81%;
-    margin: 0;
-}
-div.card4{
-    display: flex;
-    flex-direction: column;
-    background-color:#131B2E;
-    border-radius: 12px;
-    padding: 16px;
-    font-family:Geist, sans-serif;
-}
-div.topocard4{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-i.fa-solid.fa-flask{
-    color: #94A3B8;
-    font-size: 18px;
-}
-div.valorPresençaGases{
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-span.PresençaGasesVal{
-    color: rgb(255, 255, 255);
-    font-size: 150%;
-    font-weight: bold;
-}
-p.descriçãoPresençaGases{
-    color: #94A3B8;
-    font-size: 81%;
-    margin: 0;
+.tempmin {
+    font-size: 12px; 
+    color: #94A3B8; 
+    text-align: right;
 }

@@ -8,84 +8,100 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans&display=swap" rel="stylesheet">
-        
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Paraiso Unip</h1>
-    <div class="Subtitulo">
-        <span class="bolinha"></span>
-        <p class="subtitulo1">Estação Meteorológica em tempo real</p>
-        <p class="subtitulo2">Brasil</p>
-    </div>
+    <header class="topo">
+        <div>
+            <h1>Paraiso Unip</h1>
+            <div class="Subtitulo">
+                <span class="bolinha"></span>
+                <p class="subtitulo1">Estação Meteorológica em tempo real</p>
+                <p class="subtitulo2">| Brasil</p>
+            </div>
+        </div>
+
+        <button class="botao-tema" aria-label="Trocar tema" onclick="document.body.classList.toggle('claro')">
+            <i class="fa-solid fa-moon icone-lua"></i>
+            <i class="fa-solid fa-sun icone-sol"></i>
+        </button>
+    </header>
+
     <div class="pagcards">
         <section id="canto-esquerdo">
             <div class="card1">
                 <div class="topocard1">
-                <h2>Umidade</h2> 
-                <i class="fa-solid fa-droplet"></i>
+                    <h2>Umidade</h2>
+                    <i class="fa-solid fa-droplet"></i>
                 </div>
                 <div class="valorUmidade">
                     <span class="UmidadeVal">13</span>
-                    <span class="UmidadeVal2">%</span> 
-                </div>   
+                    <span class="UmidadeVal2">%</span>
+                </div>
                 <p class="descricaoUmidade">Ponto de condensação normal</p>
-            </div> 
+            </div>
+
             <div class="card2">
                 <div class="topocard2">
-                <h2>Pressão Atmosférica</h2> 
-                <i class="fa-solid fa-gauge"></i>
+                    <h2>Pressão Atmosférica</h2>
+                    <i class="fa-solid fa-gauge"></i>
                 </div>
                 <div class="valorPressaoAtmosferica">
                     <span class="PressaoAtmosfericaVal">5005</span>
-                    <span class="UnidadePressao">hPa</span> 
-                </div>   
+                    <span class="UnidadePressao">hPa</span>
+                </div>
                 <p class="descricaoPressao">Estável</p>
-            </div> 
+            </div>
+
             <div class="card3">
                 <div class="topocard3">
-                <h2>Qualidade do Ar</h2> 
-                <i class="fa-solid fa-lungs"></i>
+                    <h2>Qualidade do Ar</h2>
+                    <i class="fa-solid fa-lungs"></i>
                 </div>
                 <div class="valorQualidadeAr">
                     <span class="QualidadeArVal">13</span>
-                    <span class="UnidadeQualidadeAr">%</span> 
-                </div>   
+                    <span class="UnidadeQualidadeAr">%</span>
+                </div>
                 <p class="descricaoQualidadeAr">Ar em baixa qualidade</p>
-            </div> 
+            </div>
+
             <div class="card4">
                 <div class="topocard4">
-                <h2>Presença de Gases</h2> 
-                <i class="fa-solid fa-flask"></i>
+                    <h2>Presença de Gases</h2>
+                    <i class="fa-solid fa-flask"></i>
                 </div>
                 <div class="valorPresencaGases">
                     <span class="PresencaGasesVal">Gases detectados</span>
-                </div> 
-                <p class="descricaoPresencaGases">Alerta de gases</p>  
-            </div> 
+                </div>
+                <p class="descricaoPresencaGases">Alerta de gases</p>
+            </div>
         </section>
+
         <section id="centro">
             <div class="card5">
                 <div class="topocard5">
-                    <h2>TEMPERATURA</h2> 
+                    <h2>TEMPERATURA</h2>
                 </div>
                 <div class="valorTemperatura">
                     <span class="TemperaturaVal">13</span>
-                    <span class="UnidadeTemperatura">°C</span> 
+                    <span class="UnidadeTemperatura">°C</span>
                     <i class="fa-solid fa-temperature-three-quarters"></i>
-                </div>   
+                </div>
                 <div class="rodapeTemperatura">
                     <span class="SensacaoTemperatura">11°C</span>
                     <span class="descricaoTemperatura">Sensação térmica</span>
                 </div>
             </div>
         </section>
+
         <section id="cantodireito">
             <div class="cardprevisao">
                 <div class="topocard6">
                     <h2>PREVISÃO 7 DIAS</h2>
                 </div>
+
                 <div class="dia">
                     <span class="diadasemana">Seg</span>
                     <span class="icone">☀</span>
@@ -93,13 +109,15 @@
                     <span class="tempmax">29°</span>
                     <span class="tempmin">19°</span>
                 </div>
-                <div class="dia">
+
+                <div class="dia destaque">
                     <span class="diadasemana">Ter</span>
                     <span class="icone">⛅</span>
                     <span class="clima">Parcialmente Nublado</span>
                     <span class="tempmax">28°</span>
                     <span class="tempmin">20°</span>
                 </div>
+
                 <div class="dia">
                     <span class="diadasemana">Qua</span>
                     <span class="icone">☁</span>
@@ -107,13 +125,15 @@
                     <span class="tempmax">26°</span>
                     <span class="tempmin">18°</span>
                 </div>
+
                 <div class="dia">
                     <span class="diadasemana">Qui</span>
                     <span class="icone">🌧</span>
-                    <span class="clima">Chuva Média </span>
+                    <span class="clima">Chuva Média</span>
                     <span class="tempmax">24°</span>
                     <span class="tempmin">17°</span>
                 </div>
+
                 <div class="dia">
                     <span class="diadasemana">Sex</span>
                     <span class="icone">⛈</span>
@@ -121,13 +141,15 @@
                     <span class="tempmax">23°</span>
                     <span class="tempmin">16°</span>
                 </div>
+
                 <div class="dia">
-                    <span class="diadasemana">Sab</span>
+                    <span class="diadasemana">Sáb</span>
                     <span class="icone">⛅</span>
                     <span class="clima">Parcialmente Nublado</span>
                     <span class="tempmax">26°</span>
                     <span class="tempmin">18°</span>
                 </div>
+
                 <div class="dia">
                     <span class="diadasemana">Dom</span>
                     <span class="icone">☀</span>
@@ -139,4 +161,4 @@
         </section>
     </div>
 </body>
-</html> 
+</html>

@@ -1,8 +1,23 @@
+:root {
+    --fundo: #0B0F19;
+    --card: #131B2E;
+    --texto: #ffffff;
+    --suave: #94A3B8;
+    --destaque: #1d2842;
+}
+.claro {
+    --fundo: #F1F5F9;
+    --card: #FFFFFF;
+    --texto: #0F172A;
+    --suave: #64748B;
+    --destaque: #E2E8F0;
+}
+
 * {
     box-sizing: border-box;
 }
 body {
-    background-color:#0B0F19;
+    background-color: var(--fundo);
     width: 100%;
     margin: 0;
     padding: 24px;
@@ -10,25 +25,32 @@ body {
     overflow-x: hidden;
 }
 h1 {
-    color:rgb(255, 255, 255);
+    color: var(--texto);
     font-size: 200%;
-    font-family:Geist, sans-serif;
-    margin-bottom: 0.5%;
+    font-family: 'Geist', sans-serif;
+    margin: 0 0 0.5% 0;
 }
-h2{
-    color: #94A3B8;
-    font-size:81%;
+h2 {
+    color: var(--suave);
+    font-size: 81%;
+    font-weight: 500;
     margin: 0;
-    font-size: 500;
 }
-.Subtitulo{
+
+.topo {
     display: flex;
-    font-size: 75%;
-    font-family: 'IBM Plex Sans', sans-serif;
-    gap: 0.65%;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
 }
-.bolinha{
+.Subtitulo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 8px;
+    font-size: 12px;
+}
+.bolinha {
     display: inline-block;
     width: 8px;
     height: 8px;
@@ -39,172 +61,204 @@ h2{
 .subtitulo1 {
     color: #06B6D4;
 }
-.subtitulo2{
-    color:rgb(85, 85, 85);
+.subtitulo2 {
+    color: var(--suave);
 }
-.pagcards{
-    display:grid;
+
+/* botão */
+.botao-tema {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card);
+    color: var(--texto);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.icone-lua {
+    display: none;
+}
+.icone-sol {
+    color: #f5b83d;
+}
+
+.claro .icone-lua {
+    display: block;
+}
+.claro .icone-sol {
+    display: none;
+}
+
+/* coluna cards */
+
+.pagcards {
+    display: grid;
     grid-template-columns: 0.9fr 1.3fr 1fr;
-    gap: 1%;
+    gap: 16px;
     width: 100%;
     min-width: 0;
     align-items: stretch;
 }
-
 #canto-esquerdo,
 #cantodireito,
-#centro{
+#centro {
     width: 100%;
     min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
-/*cards umidade, pressão, qualidade do ar, presença de gases, temperatura e previsão  */
+
+/*cards*/
+
 .card1,
 .card2,
 .card3,
 .card4,
 .card5,
-.cardprevisao{
+.cardprevisao {
     display: flex;
     flex-direction: column;
-    background-color:#131B2E;
+    background-color: var(--card);
     border: 1px solid rgba(148, 163, 184, 0.15);
     border-radius: 12px;
-    padding: 5%;
-    font-family:'Geist', sans-serif;
+    padding: 16px;
+    font-family: 'Geist', sans-serif;
 }
-.cardprevisao{
-    color: #ffffff;
+.cardprevisao {
+    color: var(--texto);
     min-width: 0;
-    flex:1;
+    flex: 1;
 }
 .topocard1,
 .topocard2,
 .topocard3,
 .topocard4,
 .topocard5,
-.topocard6{
-    display:flex;
+.topocard6 {
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.topocard5{
+.topocard5 {
     justify-content: center;
 }
-.topocard5 h2{
+.topocard5 h2 {
     font-size: 1.4rem;
     font-weight: 500;
 }
 
-/* ícones das variavéis */
+/*ícones dos cards */
 
-i.fa-solid.fa-droplet{
+i.fa-solid.fa-droplet {
     color: #06B6D4;
     font-size: 110%;
 }
-i.fa-solid.fa-gauge{
-    color: #94A3B8;
+i.fa-solid.fa-gauge {
+    color: var(--suave);
     font-size: 18px;
 }
-i.fa-solid.fa-lungs{
+i.fa-solid.fa-lungs {
     color: #06B6D4;
     font-size: 18px;
 }
-i.fa-solid.fa-flask{
-    color: #94A3B8;
+i.fa-solid.fa-flask {
+    color: var(--suave);
     font-size: 18px;
 }
-i.fa-solid.fa-temperature-three-quarters{
+i.fa-solid.fa-temperature-three-quarters {
     color: #06B6D4;
     font-size: 60px;
     padding: 20px;
 }
 
-/* estilos dos valores das variavéis */ 
+/* valores dos cards */
 
 .valorUmidade,
 .valorPressaoAtmosferica,
 .valorPresencaGases,
 .valorQualidadeAr,
-.valorTemperatura{
+.valorTemperatura {
     display: flex;
     align-items: center;
     gap: 4px;
     margin: 8px 0 4px;
 }
-.valorTemperatura{
+.valorTemperatura {
     justify-content: center;
-    flex:1;
-    gap: 10x;
+    flex: 1;
+    gap: 10px;
 }
 .UmidadeVal,
 .PressaoAtmosfericaVal,
 .QualidadeArVal,
-.PresencaGasesVal{
-    color: rgb(255, 255, 255);
+.PresencaGasesVal {
+    color: var(--texto);
     font-size: 150%;
     font-weight: 600;
     font-family: 'IBM Plex Mono', monospace;
 }
-.PresencaGasesVal{
-    font-family: 'Geist';
+.PresencaGasesVal {
+    font-family: 'Geist', sans-serif;
 }
 .UmidadeVal2,
 .UnidadePressao,
-.UnidadeQualidadeAr{
+.UnidadeQualidadeAr {
     display: flex;
     align-items: center;
     font-size: 81%;
-    color: #94A3B8;
+    color: var(--suave);
 }
 .descricaoUmidade,
 .descricaoPressao,
-.descricaoQualidadeAr{
+.descricaoQualidadeAr {
     color: #06B6D4;
     font-size: 81%;
     margin: 0;
 }
-.descricaoPresencaGases{
-    color: #94A3B8;
+.descricaoPresencaGases {
+    color: var(--suave);
     font-size: 81%;
     margin: 0;
 }
 
-/*variavéis da temperatura */
+/*card da temperatura */
 
-.TemperaturaVal{
-    color: rgb(255, 255, 255);
+.TemperaturaVal {
+    color: var(--texto);
     font-size: 450%;
     font-weight: bold;
     text-align: center;
 }
-.UnidadeTemperatura{
+.UnidadeTemperatura {
     display: flex;
     font-size: 175%;
     color: #06B6D4;
     font-weight: 600;
 }
-.rodapeTemperatura{
+.rodapeTemperatura {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #94A3B8;
+    border-top: 1px solid var(--suave);
     padding-top: 12px;
     margin-top: 12px;
 }
-.SensacaoTemperatura{
-    color: #ffffff;
+.SensacaoTemperatura {
+    color: var(--texto);
     font-size: 150%;
     font-weight: 600;
 }
-.descricaoTemperatura{
-    color: #94A3B8;
+.descricaoTemperatura {
+    color: var(--suave);
     font-size: 87%;
 }
 
-/*variavéis da previsão */
+/*card da previsão*/
 
 .dia {
     flex: 1;
@@ -216,23 +270,26 @@ i.fa-solid.fa-temperature-three-quarters{
     border-radius: 10px;
     min-width: 0;
 }
+.dia.destaque {
+    background-color: var(--destaque);
+}
 .diadasemana {
     font-weight: 600;
     font-size: 13px;
-    color: #fff;
+    color: var(--texto);
 }
-.clima{
-    font-size: 11px; 
-    color: #94A3B8; 
-    overflow-wrap: anywhere
+.clima {
+    font-size: 13px;
+    color: var(--suave);
+    overflow-wrap: anywhere;
 }
 .tempmax {
-    font-weight: 700; 
-    font-size: 13px; 
-    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--texto);
 }
 .tempmin {
-    font-size: 12px; 
-    color: #94A3B8; 
+    font-size: 12px;
+    color: var(--suave);
     text-align: right;
 }

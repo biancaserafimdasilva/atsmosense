@@ -171,6 +171,9 @@ i.fa-solid.fa-temperature-three-quarters{
     font-size: 81%;
     margin: 0;
 }
+
+/*variavéis da temperatura */
+
 .TemperaturaVal{
     color: rgb(255, 255, 255);
     font-size: 450%;
@@ -200,6 +203,9 @@ i.fa-solid.fa-temperature-three-quarters{
     color: #94A3B8;
     font-size: 87%;
 }
+
+/*variavéis da previsão */
+
 .dia {
     flex: 1;
     display: grid;

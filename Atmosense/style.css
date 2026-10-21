@@ -1,8 +1,13 @@
-/* estilo corpo */
+* {
+    box-sizing: border-box;
+}
 body {
     background-color:#0B0F19;
     width: 100%;
-    margin: 500;
+    margin: 0;
+    padding: 24px;
+    font-family: 'Geist', sans-serif;
+    overflow-x: hidden;
 }
 h1 {
     color:rgb(255, 255, 255);
@@ -13,14 +18,8 @@ h1 {
 h2{
     color: #94A3B8;
     font-size:81%;
-}
-.PagInteira{
-    display:grid;
-    grid-template-columns: 31% 40% 27%;
-    gap: 1%;
-    flex-direction: row;
-    align-items: start;
-
+    margin: 0;
+    font-size: 500;
 }
 .Subtitulo{
     display: flex;
@@ -43,41 +42,43 @@ h2{
 .subtitulo2{
     color:rgb(85, 85, 85);
 }
-
-#CantoEsquerdo{
+.pagcards{
+    display:grid;
+    grid-template-columns: 0.9fr 1.3fr 1fr;
+    gap: 1%;
     width: 100%;
     min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 3%;
-}
-#Centro{
-    width: 100%;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 3%;
-}
-#cantodireito {
-    width: 100%;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 3%;
+    align-items: stretch;
 }
 
+#canto-esquerdo,
+#cantodireito,
+#centro{
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+/*cards umidade, pressão, qualidade do ar, presença de gases, temperatura e previsão  */
 .card1,
 .card2,
 .card3,
 .card4,
-.card5{
+.card5,
+.cardprevisao{
     display: flex;
     flex-direction: column;
     background-color:#131B2E;
+    border: 1px solid rgba(148, 163, 184, 0.15);
     border-radius: 12px;
     padding: 5%;
-    font-family:Geist, sans-serif;
-    margin-bottom: 3%;
+    font-family:'Geist', sans-serif;
+}
+.cardprevisao{
+    color: #ffffff;
+    min-width: 0;
+    flex:1;
 }
 .topocard1,
 .topocard2,
@@ -89,6 +90,16 @@ h2{
     justify-content: space-between;
     align-items: center;
 }
+.topocard5{
+    justify-content: center;
+}
+.topocard5 h2{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+/* ícones das variavéis */
+
 i.fa-solid.fa-droplet{
     color: #06B6D4;
     font-size: 110%;
@@ -111,6 +122,8 @@ i.fa-solid.fa-temperature-three-quarters{
     padding: 20px;
 }
 
+/* estilos dos valores das variavéis */ 
+
 .valorUmidade,
 .valorPressaoAtmosferica,
 .valorPresencaGases,
@@ -119,6 +132,12 @@ i.fa-solid.fa-temperature-three-quarters{
     display: flex;
     align-items: center;
     gap: 4px;
+    margin: 8px 0 4px;
+}
+.valorTemperatura{
+    justify-content: center;
+    flex:1;
+    gap: 10x;
 }
 .UmidadeVal,
 .PressaoAtmosfericaVal,
@@ -126,7 +145,11 @@ i.fa-solid.fa-temperature-three-quarters{
 .PresencaGasesVal{
     color: rgb(255, 255, 255);
     font-size: 150%;
-    font-weight: bold;
+    font-weight: 600;
+    font-family: 'IBM Plex Mono', monospace;
+}
+.PresencaGasesVal{
+    font-family: 'Geist';
 }
 .UmidadeVal2,
 .UnidadePressao,
@@ -148,30 +171,18 @@ i.fa-solid.fa-temperature-three-quarters{
     font-size: 81%;
     margin: 0;
 }
-
-.card5{
-    display: flex;
-    flex-direction: column;
-    background-color:#131B2E;
-    border-radius: 12px;
-    padding: 16px;
-    height: 297px;
-    font-family:Geist, sans-serif;
-}
-
 .TemperaturaVal{
     color: rgb(255, 255, 255);
     font-size: 450%;
     font-weight: bold;
+    text-align: center;
 }
-
 .UnidadeTemperatura{
     display: flex;
     font-size: 175%;
     color: #06B6D4;
     font-weight: 600;
 }
-
 .rodapeTemperatura{
     display: flex;
     justify-content: space-between;
@@ -180,34 +191,24 @@ i.fa-solid.fa-temperature-three-quarters{
     padding-top: 12px;
     margin-top: 12px;
 }
-
 .SensacaoTemperatura{
     color: #ffffff;
     font-size: 150%;
     font-weight: 600;
 }
-
 .descricaoTemperatura{
     color: #94A3B8;
     font-size: 87%;
 }
-
-/* estilo card previsão */
-.cardprevisao {
-    background-color: #131B2E;
-    border-radius: 12px;
-    padding: 16px;
-    font-family: Geist, sans-serif;
-    color: #ffffff;
-    min-width: 0;
-}
 .dia {
+    flex: 1;
     display: grid;
-    grid-template-columns: 38px 24px 1fr auto auto;
+    grid-template-columns: 12% 8% minmax(0, 1fr) auto auto;
     align-items: center;
     gap: 2%;
-    padding: 5% 2%;
-    border-radius: 3%;
+    padding: 0 8px;
+    border-radius: 10px;
+    min-width: 0;
 }
 .diadasemana {
     font-weight: 600;
@@ -217,6 +218,7 @@ i.fa-solid.fa-temperature-three-quarters{
 .clima{
     font-size: 11px; 
     color: #94A3B8; 
+    overflow-wrap: anywhere
 }
 .tempmax {
     font-weight: 700; 
